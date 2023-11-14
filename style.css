@@ -1,0 +1,27 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #eaeaea;
+}
+input{
+    width: 250px;
+    border: 2px solid rgb(33, 52, 4);
+    height: auto;
+
+}
+
+.submit {
+    margin-top: 20px;
+    background-color: black;
+    border: none;
+    color: white;
+    width: 250px;
+    border-radius: 12px;
+}
