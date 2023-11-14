@@ -3,48 +3,27 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Ajouter un Client</title>
+    <title>Gestion Bancaire</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
-    <h2>Ajouter un Client</h2>
-    <img src="Brif/what-u-s-companies-can-learn-from-the-european-payment-scene_1500.jpg" alt="000">
-    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
-        Nom: <br> <input type="text" name="name" placeholder=" Nom"><br>
-        Prénom:<br> <input type="text" name="prenom" placeholder="Prénom"><br>
-        Date de Naissance: <br> <input type="date" name="date"><br>
-        Nationalité: <br> <input type="text" name="nationalite" placeholder="Nationalité"><br>
-        Genre: <br> <input type="text" name="genre" placeholder="Genre"><br>
-        <input name="submit" type="submit" class="submit" value="envoyer">
-    </form>
-    <?php
-    $host = "localhost";
-    $user = "root";
-    $pw = "";
-    $ndb = "contactme";
-    $con = mysqli_connect($host, $user, $pw, $ndb);
-
-    // if ($con) {
-    //     echo "connected";
-    // } else {
-    //     echo "no connected";
-    // }
-    if (isset($_POST['submit'])) {
-        $name = $_POST['name'];
-        $prenom = $_POST['prenom'];
-        $date = $_POST['date'];
-        $nationalite = $_POST['nationalite'];
-        $genre = $_POST['genre'];
-        if ($name && $prenom && $date && $nationalite && $genre) {
-            $query = "INSERT INTO contact(name,prenom,date,nationalite,genre)values('$name','$prenom','$date','$nationalite','$genre')";
-            mysqli_query($con, $query);
-            echo "valid";
-        } else {
-            echo "il faut saisir tout les champs";
-        }
-    }
-    ?>
+    <h2>Gestion Bancaire</h2>
+    <section class="continer">
+    <ul class="admin">
+        <h3>admministration</h3>
+        <li><a href="adminclients.php">1-Gestion des Clients</a></li>
+        <li><a href="comptes.php">2-Gestion des Comptes</a></li>
+        <li><a href="admintransactions.php">3-Gestion des Transactions</a></li>
+    </ul>
+    <ul class="afficher">
+        <h3>afficher</h3>
+        <li><a href="afficher_comptes.php">1-affiche des Clients</a></li>
+        <li><a href="comptes.php">2-affiche des Comptes</a></li>
+        <li><a href="afficher_transactions.php">3-affiche des Transactions</a></li>
+    </ul>
+    </section>
 </body>
 
 </html>
