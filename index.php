@@ -10,9 +10,13 @@
 
 <body>
     <div class="header" id="header">
-        <div class="container">
+
+        <div class="containerr">
+            <div class="logo">
+                <a href="index.php"><img src="Design_sans_titre-removebg-preview.png" alt=""></a>
+            </div>
             <ul class="main-nav">
-            <li>
+                <li>
                     <a href="#">Afficher</a>
                     <!-- Start Megamenu -->
                     <div class="mega-menu">
@@ -33,7 +37,7 @@
                 <li><a href="adminclients.php">Gestion des Clients</a></li>
                 <li><a href="admincompt.php">Gestion des Comptes</a></li>
                 <li><a href="admintransactions.php">Gestion des Transactions</a></li>
-                
+
             </ul>
         </div>
 

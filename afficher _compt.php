@@ -9,7 +9,10 @@
 
 <body>
     <div class="header" id="header">
-        <div class="container">
+        <div class="containerr">
+            <div class="logo">
+                <a href="index.php"><img src="Design_sans_titre-removebg-preview.png" alt=""></a>
+            </div>
             <ul class="main-nav">
                 <li>
                     <a href="#">Afficher</a>

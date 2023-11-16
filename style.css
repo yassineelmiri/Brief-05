@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-image: url(what-u-s-companies-can-learn-from-the-european-payment-scene_1500.jpg);
+    background-image: url(what-u-s-companies-can-learn-from-the-european-payment-scene_1500.jpg) ;
     color: white;
     margin: 0;
     padding: 0;
@@ -14,12 +14,18 @@ h2{
 button{
     display: inline-block;
     padding: 10px 20px;
+    margin: 20px;
     font-size: 16px;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
     border-radius: 5px;
     transition: black 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+button a{
+    font-style: none;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
 }
 .affi{
     display: flex;
@@ -73,6 +79,13 @@ input[type="date"] {
 
 .container {
     width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.containerr {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
     margin: 0 auto;
     overflow: hidden;
 }

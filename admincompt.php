@@ -8,8 +8,11 @@
 </head>
 
 <body>
-<div class="header" id="header">
-        <div class="container">
+    <div class="header" id="header">
+        <div class="containerr">
+            <div class="logo">
+                <a href="index.php"><img src="Design_sans_titre-removebg-preview.png" alt=""></a>
+            </div>
             <ul class="main-nav">
                 <li>
                     <a href="#">Afficher</a>
@@ -37,33 +40,33 @@
         </div>
     </div>
     <section>
-    <h2>Gestion de Comptes</h2>
-    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
-        id: <br> <input type="number" name="idClient" placeholder="id Client"><br>
-        balance:<br> <input type="text" name="balance" placeholder="balance"><br>
-        device: <br> <input type="text" name="device" placeholder="device"><br>
-        <input name="submit" type="submit" class="submit" value="envoyer">
-    </form>
-    <!-- Affichage des transactions -->
-    <?php $host = "localhost";
-    $user = "root";
-    $pw = "";
-    $ndb = "contactme";
-    $con = mysqli_connect($host, $user, $pw, $ndb);
-    
-    if (isset($_POST['submit'])) {
-        $idClient = $_POST['idClient'];
-        $balance = $_POST['balance'];
-        $device = $_POST['device'];
-        
-        if ($idClient && $balance && $device) {
-            $query = "INSERT INTO comptes(balance,device,idClient)values('$balance','$device','$idClient')";
-            mysqli_query($con, $query);
-            echo "valid";
-        } else {
-            echo "il faut saisir tout les champs";
-        }
-    } ?>
+        <h2>Gestion de Comptes</h2>
+        <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
+            id: <br> <input type="number" name="idClient" placeholder="id Client"><br>
+            balance:<br> <input type="text" name="balance" placeholder="balance"><br>
+            device: <br> <input type="text" name="device" placeholder="device"><br>
+            <input name="submit" type="submit" class="submit" value="envoyer">
+        </form>
+        <!-- Affichage des transactions -->
+        <?php $host = "localhost";
+        $user = "root";
+        $pw = "";
+        $ndb = "contactme";
+        $con = mysqli_connect($host, $user, $pw, $ndb);
+
+        if (isset($_POST['submit'])) {
+            $idClient = $_POST['idClient'];
+            $balance = $_POST['balance'];
+            $device = $_POST['device'];
+
+            if ($idClient && $balance && $device) {
+                $query = "INSERT INTO comptes(balance,device,idClient)values('$balance','$device','$idClient')";
+                mysqli_query($con, $query);
+                echo "valid";
+            } else {
+                echo "il faut saisir tout les champs";
+            }
+        } ?>
     </section>
     <button><a href="index.php">return</a></button>
 
