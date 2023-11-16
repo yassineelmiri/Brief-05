@@ -3,12 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Ajouter un Client</title>
+    <title>Gestion des Transactions</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="header" id="header">
+<div class="header" id="header">
         <div class="container">
             <ul class="main-nav">
                 <li>
@@ -37,48 +37,35 @@
         </div>
     </div>
     <section>
-    <h2>Ajouter un Client</h2>
+    <h2>Gestion de Comptes</h2>
     <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
-        Nom: <br> <input type="text" name="name" placeholder=" Nom"><br>
-        Prénom:<br> <input type="text" name="prenom" placeholder="Prénom"><br>
-        Date de Naissance: <br> <input type="date" name="date"><br>
-        Nationalité: <br> <input type="text" name="nationalite" placeholder="Nationalité"><br>
-        Genre: <br> <input type="text" name="genre" placeholder="Genre"><br>
+        id: <br> <input type="number" name="idClient" placeholder="id Client"><br>
+        balance:<br> <input type="text" name="balance" placeholder="balance"><br>
+        device: <br> <input type="text" name="device" placeholder="device"><br>
         <input name="submit" type="submit" class="submit" value="envoyer">
     </form>
-    <?php
-    $host = "localhost";
+    <!-- Affichage des transactions -->
+    <?php $host = "localhost";
     $user = "root";
     $pw = "";
     $ndb = "contactme";
     $con = mysqli_connect($host, $user, $pw, $ndb);
-
-    // if ($con) {
-    //     echo "connected";
-    // } else {
-    //     echo "no connected";
-    // }
     
     if (isset($_POST['submit'])) {
-        $name = $_POST['name'];
-        $prenom = $_POST['prenom'];
-        $date = $_POST['date'];
-        $nationalite = $_POST['nationalite'];
-        $genre = $_POST['genre'];
-        if ($name && $prenom && $date && $nationalite && $genre) {
-            $query = "INSERT INTO contact(name,prenom,date,nationalite,genre)values('$name','$prenom','$date','$nationalite','$genre')";
+        $idClient = $_POST['idClient'];
+        $balance = $_POST['balance'];
+        $device = $_POST['device'];
+        
+        if ($idClient && $balance && $device) {
+            $query = "INSERT INTO comptes(balance,device,idClient)values('$balance','$device','$idClient')";
             mysqli_query($con, $query);
             echo "valid";
         } else {
             echo "il faut saisir tout les champs";
         }
-    }
-    ?>
-    
+    } ?>
     </section>
-   
     <button><a href="index.php">return</a></button>
-  
 
 </body>
 

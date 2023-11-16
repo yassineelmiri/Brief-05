@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Gestion des Transactions</title>
+    <title>Gestion des Comptes</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -37,10 +37,9 @@
         </div>
     </div>
     <section class="affi">
-        <h2>Gestion des Transactions</h2>
-        <!-- Affichage des transactions -->
-        <?php
-        // Connexion à la base de données
+        <h2>Gestion des Comptes</h2>
+        <!-- Affichage des comptes -->
+        <?php // Connexion à la base de données
         $host = "localhost";
         $user = "root";
         $pw = "";
@@ -52,27 +51,28 @@
             die("La connexion a échoué : " . mysqli_connect_error());
         }
 
-        // Requête pour récupérer la liste des transactions
-        $query = "SELECT * FROM transactions";
+        // Requête pour récupérer la liste des comptes
+        $query = "SELECT * FROM comptes";
         $result = mysqli_query($con, $query);
 
         // Vérifier si la requête a réussi
         if ($result) {
-            // Afficher la liste des transactions
+            // Afficher la liste des comptes
             echo "<table border='1'>
             <tr>
                 <th>ID</th>
-                <th>Montant</th>
-                <th>Type</th>
+                <th>balance</th>
+                <th>device</th>
                 <th>idClient</th>
             </tr>";
 
             while ($row = mysqli_fetch_assoc($result)) {
                 echo "<tr>
                 <td>{$row['id']}</td>
-                <td>{$row['montant']}</td>
-                <td>{$row['type']}</td>
+                <td>{$row['balance']}</td>
+                <td>{$row['device']}</td>
                 <td>{$row['idClient']}</td>
+
               </tr>";
             }
 
@@ -85,7 +85,6 @@
         mysqli_close($con); ?>
     </section>
     <button><a href="index.php">return</a></button>
-
 </body>
 
 </html>
