@@ -64,14 +64,16 @@
             echo "<table border='1'>
             <tr>
                 <th>ID</th>
-                <th>balance</th>
-                <th>device</th>
+                <th>RIB</th>
+                <th>Balance</th>
+                <th>Device</th>
                 <th>idClient</th>
             </tr>";
 
             while ($row = mysqli_fetch_assoc($result)) {
                 echo "<tr>
                 <td>{$row['id']}</td>
+                <td>{$row['RIB']}</td>
                 <td>{$row['balance']}</td>
                 <td>{$row['device']}</td>
                 <td>{$row['idClient']}</td>

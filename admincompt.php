@@ -42,7 +42,7 @@
     <section>
         <h2>Gestion de Comptes</h2>
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
-            id: <br> <input type="number" name="idClient" placeholder="id Client"><br>
+            id client: <br> <input type="number" name="idClient" placeholder="id Client"><br>
             balance:<br> <input type="text" name="balance" placeholder="balance"><br>
             device: <br> <input type="text" name="device" placeholder="device"><br>
             <input name="submit" type="submit" class="submit" value="envoyer">
@@ -58,9 +58,12 @@
             $idClient = $_POST['idClient'];
             $balance = $_POST['balance'];
             $device = $_POST['device'];
+            $date = date('Ymdhis') ;
+            $RIB = $date.substr($date,0,16);
+            
 
-            if ($idClient && $balance && $device) {
-                $query = "INSERT INTO comptes(balance,device,idClient)values('$balance','$device','$idClient')";
+            if ($idClient && $balance && $device && $RIB) {
+                $query = "INSERT INTO comptes(RIB,balance,device,idClient)values('$RIB','$balance','$device','$idClient')";
                 mysqli_query($con, $query);
                 echo "valid";
             } else {
